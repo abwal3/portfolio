@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>ABDULALEEM ALTARSHA</h1>
+    <p>welcome to my portfolio</p>
+    
+    <img src="{{ url_for('static', filename='abdulaleem.jpeg') }}" alt="my image">
+
+    <div class="menu">
+        <a href="{{ url_for('about') }}" class="menu-btn"><i class="fa-solid fa-user"></i> About Me</a>
+        
+        <a href="{{ url_for('education') }}" class="menu-btn"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+        
+        <a href="{{ url_for('projects') }}" class="menu-btn"><i class="fa-solid fa-briefcase"></i> Projects</a>
+        
+        <a href="{{ url_for('skills') }}" class="menu-btn"><i class="fa-solid fa-toolbox"></i> Skills</a>
+        
+        <a href="{{ url_for('volunteering') }}" class="menu-btn"><i class="fa-solid fa-hand-holding-heart"></i> Volunteering</a>
+        
+        <a href="{{ url_for('programmingLanguages') }}" class="menu-btn"><i class="fa-solid fa-code"></i> Programming Languages</a>
+        
+        <a href="{{ url_for('languages') }}" class="menu-btn"><i class="fa-solid fa-language"></i> Languages</a>
+    </div>
+
+    <p>go to my <a href="https://www.linkedin.com/in/abdulaleem-altarsha-72b458329/" class="linkedin-btn" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></p>
+
+
+    {% endblock %}

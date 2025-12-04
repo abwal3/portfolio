@@ -1,0 +1,84 @@
+body {
+    background-color: lightblue;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- Card & Layout --- */
+.card {
+    background-color: white;
+    width: 350px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 12px;
+    color: gray;
+}
+
+/* --- Images --- */
+img {
+    width: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* --- BUTTONS: Base Style --- */
+a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    display: inline-block; /* Allows spacing */
+    margin: 10px;          /* Space between buttons */
+    transition: all 0.3s ease;
+}
+
+/* 1. Main Menu Buttons (Blue) */
+.menu-btn {
+    background-color: rgb(17, 148, 218);
+    color: black;
+}
+.menu-btn:hover {
+    background-color: #0056b3;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* 2. LinkedIn Button (Brand Blue) */
+.linkedin-btn {
+    background-color: #0077b5;
+    color: white;
+}
+.linkedin-btn:hover {
+    box-shadow: 0 0 15px #0077b5;
+}
+
+/* 3. Go Back Button (Grey) */
+.back-btn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+.back-btn:hover {
+    background-color: #bdbdbd;
+}
+
+/* 4. GitHub Button (Green) */
+.github-btn {
+    background-color: #2ea44f;
+    color: white;
+}
+.github-btn:hover {
+    background-color: #2c974b;
+    box-shadow: 0 0 15px #2ea44f;
+}

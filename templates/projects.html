@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h2>Projects</h2>
+    
+    <p>You can access my projects here:</p>
+    <a href="https://gitHub.com/abwal3" class="github-btn" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+    </a>
+    <br><br> <a href="{{ url_for('home') }}" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Go Back
+            </a>
+            
+{% endblock %}
