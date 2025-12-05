@@ -1,7 +1,36 @@
 body {
-    background-color: lightblue;
-    text-align: center;
+    /* 1. The Gradient Colors (You can change these hex codes!) */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    
+    /* 2. Zoom in so we have room to move */
+    background-size: 400% 400%;
+    
+    /* 3. The Animation: 'gradient' is the name, '15s' is the speed */
+    animation: gradient 15s ease infinite;
+
+    /* Standard setup */
+    min-height: 100vh;
+    margin: 0;
     font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+/* --- The Interaction: Speed up when mouse is on the screen --- */
+body:hover {
+    animation-duration: 5s; /* Speeds up from 15s to 5s */
+}
+
+/* --- The Map: Tells the background where to move --- */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* --- Card & Layout --- */
@@ -82,4 +111,67 @@ a {
 .github-btn:hover {
     background-color: #2c974b;
     box-shadow: 0 0 15px #2ea44f;
+}
+
+/* --- Grid System for Lists (Skills, Languages, etc.) --- */
+ul {
+    display: grid;                  /* Turns the list into a grid */
+    grid-template-columns: 1fr 1fr; /* Creates 2 equal columns (1 fraction each) */
+    gap: 15px;                      /* Adds space between the items */
+    padding: 0;                     /* Removes default browser padding */
+    list-style: none;               /* Removes the black bullet points */
+}
+
+li {
+    background-color: #f0f4f8;      /* Adds a very light background to each item */
+    padding: 10px;                  /* Adds breathing room inside the item */
+    border-radius: 8px;             /* Rounds the corners slightly */
+    font-weight: 500;               /* Makes the text a little bolder */
+    border: 1px solid #d1d9e6;      /* Adds a subtle border */
+}
+/* --- The Flashlight Effect --- */
+.cursor-glow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    pointer-events: none; /* CRITICAL: Lets clicks pass through to buttons */
+    transform: translate(-50%, -50%); /* Centers the ball on the mouse */
+    z-index: -1; /* Keeps it BEHIND your text/card so you can read */
+    mix-blend-mode: screen; /* Blends coolly with the colors */
+}
+
+/* Ensure the card sits ABOVE the glow so text is readable */
+.card {
+    position: relative; 
+    z-index: 10;
+}
+
+/* --- Volunteering Timeline Style (Fixed Vertical Layout) --- */
+ul.timeline {
+    grid-template-columns: 1fr; /* Forces the list itself to be 1 column wide */
+}
+
+ul.timeline li {
+    display: flex;              /* Turns on Flexbox layout */
+    flex-direction: column;     /* CRITICAL: Stacks Title on top, Text below */
+    text-align: left;           /* Aligns text to the left */
+    border-left: 5px solid rgb(17, 148, 218); /* Blue accent bar */
+    background-color: rgba(255, 255, 255, 0.9); /* White background */
+    padding: 20px;              /* Adds nice spacing inside the box */
+}
+
+ul.timeline strong {
+    font-size: 1.2em;           /* Makes the title slightly larger */
+    color: #0077b5;             /* Blue color for the title */
+    margin-bottom: 10px;        /* Adds space between Title and Description */
+    display: block;             /* Ensures it takes up the full width */
+}
+
+ul.timeline p {
+    font-size: 0.95em;
+    color: #333;                /* Dark grey text for readability */
+    margin: 0;
+    line-height: 1.6;           /* Makes the paragraph easier to read */
 }

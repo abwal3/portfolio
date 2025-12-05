@@ -10,11 +10,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <div class="cursor-glow"></div>
         <div class="card">
-            
             {% block content %}
             {% endblock %}
             <p class="footer">Made by Abdulaleem</p>
         </div>
+        <script>
+        // Select the glow element
+        const glow = document.querySelector('.cursor-glow');
+
+        // Listen for the mouse moving anywhere on the screen
+        document.addEventListener('mousemove', (e) => {
+            // Update the position of the glow to match the mouse coordinates
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+    </script>
     </body>
 </html>
